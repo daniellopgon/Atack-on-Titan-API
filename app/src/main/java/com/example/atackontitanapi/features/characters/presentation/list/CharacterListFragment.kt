@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.atackontitanapi.R
 import com.example.atackontitanapi.core.presentation.errors.ErrorAppFactory
@@ -69,10 +70,9 @@ class CharacterListFragment : Fragment(R.layout.fragment_character_list) {
     }
 
     private fun navigateToDetail(characterId: Int) {
-        // TODO: Implement navigation to detail
-        // val action = CharacterListFragmentDirections
-        //     .actionCharacterListFragmentToCharacterDetailFragment(characterId)
-        // findNavController().navigate(action)
+        val action = CharacterListFragmentDirections
+            .actionCharacterListFragmentToCharacterDetailFragment(characterId)
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

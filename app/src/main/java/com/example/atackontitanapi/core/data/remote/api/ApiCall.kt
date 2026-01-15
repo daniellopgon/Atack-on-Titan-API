@@ -15,14 +15,14 @@ suspend fun <T> apiCall(
             if (response.isSuccessful && response.body() != null) {
                 Result.success(response.body()!!)
             } else if (response.code() == 404) {
-                Result.failure(ErrorApp.NotFoundError)
+                Result.failure(ErrorApp.InternetConexionError)
             } else {
-                Result.failure(ErrorApp.ServerError)
+                Result.failure(ErrorApp.ServerErrorApp)
             }
         } catch (e: IOException) {
-            Result.failure(ErrorApp.NetworkError)
+            Result.failure(ErrorApp.InternetConexionError)
         } catch (e: Exception) {
-            Result.failure(ErrorApp.ServerError)
+            Result.failure(ErrorApp.ServerErrorApp)
         }
     }
 }

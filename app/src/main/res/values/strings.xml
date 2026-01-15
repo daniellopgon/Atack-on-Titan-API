@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AtackOnTitanApi</string>
+    <string name="title_error_connection">Sin conexión</string>
+    <string name="description_error_connection">Comprueba tu conexión a internet e inténtalo de nuevo.</string>
+    <string name="title_error_server">Error del servidor</string>
+    <string name="description_error_server">Ha ocurrido un error. Por favor, inténtalo más tarde.</string>
+    <string name="retry">Reintentar</string>
+    <string name="error_icon">Icono de error</string>
 </resources>

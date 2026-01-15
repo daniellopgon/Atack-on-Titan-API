@@ -6,4 +6,6 @@
     <string name="description_error_server">Ha ocurrido un error. Por favor, inténtalo más tarde.</string>
     <string name="retry">Reintentar</string>
     <string name="error_icon">Icono de error</string>
+    <string name="empty_list">No hay personajes disponibles</string>
+    <string name="character_avatar">Avatar del personaje</string>
 </resources>

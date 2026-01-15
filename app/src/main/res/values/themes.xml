@@ -2,4 +2,9 @@
     <style name="Base.Theme.AtackOnTitanApi" parent="Theme.Material3.DayNight.NoActionBar">
     </style>
     <style name="Theme.AtackOnTitanApi" parent="Base.Theme.AtackOnTitanApi" />
+
+    <style name="CircleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

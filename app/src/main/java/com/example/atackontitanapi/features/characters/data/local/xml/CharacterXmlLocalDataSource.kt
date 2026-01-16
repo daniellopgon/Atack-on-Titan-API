@@ -1,6 +1,5 @@
 package com.example.atackontitanapi.features.characters.data.local.xml
 
-import android.content.Context
 import com.example.atackontitanapi.core.data.local.xml.XmlCacheStorage
 import com.example.atackontitanapi.core.domain.ErrorApp
 import com.example.atackontitanapi.features.characters.domain.Character
@@ -8,18 +7,11 @@ import org.koin.core.annotation.Single
 
 @Single
 class CharacterXmlLocalDataSource(
-    context: Context
+    private val xmlCacheStorage: XmlCacheStorage<CharacterXmlModel>
 ) {
     companion object {
-        private const val CACHE_NAME = "characters_cache"
         private const val CACHE_EXPIRATION_MS = 5 * 60 * 1000L // 5 minutes
     }
-
-    private val xmlCacheStorage = XmlCacheStorage(
-        context = context,
-        nameXml = CACHE_NAME,
-        dataSerializer = CharacterXmlModel.serializer()
-    )
 
     fun findAll(): Result<List<Character>> {
         return xmlCacheStorage.obtainAll().fold(

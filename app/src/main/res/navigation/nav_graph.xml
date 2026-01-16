@@ -15,6 +15,13 @@
             app:destination="@id/characterDetailFragment" />
     </fragment>
 
-    <fragment android:id="@+id/characterDetailFragment" />
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.example.atackontitanapi.features.characters.presentation.detail.CharacterDetailFragment"
+        android:label="CharacterDetailFragment">
+        <argument
+            android:name="characterId"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

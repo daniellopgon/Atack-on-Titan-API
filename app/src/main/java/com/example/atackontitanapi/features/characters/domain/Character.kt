@@ -10,6 +10,6 @@ data class Character(
     val alias: List<String>,
     val species: List<String>,
     val gender: String,
-    val age: Int,
+    val age: String,
     val height: String
 )

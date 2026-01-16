@@ -1,5 +1,6 @@
 package com.example.atackontitanapi.features.characters.presentation.list
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.atackontitanapi.core.domain.ErrorApp
@@ -29,15 +30,18 @@ class CharacterListViewModel(
 
             fetchCharactersUseCase().fold(
                 onSuccess = { characters ->
+                    Log.d("CharacterListVM", "Loaded ${characters.size} characters")
                     _uiState.update { it.copy(
                         isLoading = false,
                         characters = characters
                     )}
                 },
                 onFailure = { error ->
+                    Log.e("CharacterListVM", "Error loading: ${error.message}", error)
+                    val appError = if (error is ErrorApp) error else ErrorApp.ServerErrorApp
                     _uiState.update { it.copy(
                         isLoading = false,
-                        error = error as? ErrorApp
+                        error = appError
                     )}
                 }
             )

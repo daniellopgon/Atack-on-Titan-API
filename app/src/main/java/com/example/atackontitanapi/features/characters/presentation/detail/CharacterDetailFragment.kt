@@ -66,7 +66,7 @@ class CharacterDetailFragment : Fragment(R.layout.fragment_character_detail) {
         binding.aliasText.text = character.alias.joinToString(", ")
         binding.speciesText.text = character.species.joinToString(", ")
         binding.genderText.text = character.gender
-        binding.ageText.text = getString(R.string.age_years, character.age)
+        binding.ageText.text = character.age
         binding.heightText.text = character.height
     }
 

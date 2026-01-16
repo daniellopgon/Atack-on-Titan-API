@@ -15,7 +15,7 @@ class CharacterApiRemoteDataSource(
 
     suspend fun fetchAll(): Result<List<Character>> = apiCall {
         service.fetchAll()
-    }.map { list -> list.map { it.toDomain() } }
+    }.map { response -> response.results.map { it.toDomain() } }
 
     suspend fun fetch(characterId: Int): Result<Character> = apiCall {
         service.fetchById(characterId)
